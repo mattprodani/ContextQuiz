@@ -1,0 +1,37 @@
+{   
+    "labelCount" : 3,
+    "photos": [
+      {
+          
+        "FILENAME": "sicily.png",
+        "LABELS": [
+          "Terrorist attack in Italy leaves 3 people dead",
+          "At least three people have been killed in an explosion in the Italian town of Ravanusa",
+          "Conflict in the Middle East leads to drone attack, hurting tens of people"
+        ],
+        "CORRECT": 2
+      },
+
+
+      {
+        "FILENAME": "kentucky.png",
+        "LABELS": [
+          "Men looking through rubble after a planned attack in Mayfield, Kentucky",
+          "Men sort through a destroyed business in Mayfield, Kentucky",
+          "Overlooked gas leak leads to destroyed business in Mayfield, Kentucky"
+        ],
+        "CORRECT": 2
+      },
+
+
+      {
+        "FILENAME": "sudan.png",
+        "LABELS": [
+          "Demonstrators protest against the prospect of military rule in Khartoum, Sudan",
+          "Election results lead to celebration in Khartoum, Sudan",
+          "Thousands parade in Khartoum, Sudan after the election of the first female vice-president"
+        ],
+        "CORRECT": 1
+      }
+    ]
+  }
