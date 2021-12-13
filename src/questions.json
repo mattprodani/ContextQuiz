@@ -9,7 +9,7 @@
           "At least three people have been killed in an explosion in the Italian town of Ravanusa",
           "Conflict in the Middle East leads to drone attack, hurting tens of people"
         ],
-        "CORRECT": 2
+        "CORRECT": 1
       },
 
 
@@ -20,7 +20,7 @@
           "Men sort through a destroyed business in Mayfield, Kentucky",
           "Overlooked gas leak leads to destroyed business in Mayfield, Kentucky"
         ],
-        "CORRECT": 2
+        "CORRECT": 1
       },
 
 
@@ -31,7 +31,7 @@
           "Election results lead to celebration in Khartoum, Sudan",
           "Thousands parade in Khartoum, Sudan after the election of the first female vice-president"
         ],
-        "CORRECT": 1
+        "CORRECT": 0
       }
     ]
   }
