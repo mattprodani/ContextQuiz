@@ -8,6 +8,8 @@ let responses = [];
 let resultTable = [];
 let quizMode = true;
 
+let htmlResults;
+
 
 let questionData;
 let buttons = [];
@@ -49,16 +51,20 @@ function showResults(){
   textAlign(CENTER);  
   fill("#FFF")
   text("Your Results", windowWidth / 2, windowHeight/10);
-  showResultRows();
 }
 
-function showResultRows(){
-  textSize(15);
+
+function parseResult(){
+  let content = "";
   for(let i = 0; i < resultTable.length; i++){
-    text("Question " + (i + 1) + ": " + resultTable[i][0], windowWidth / 2, i * windowHeight /3 + windowHeight / 5);
-    text("Correct answer: " + (i + 1) + ": " + resultTable[i][1], windowWidth / 2,i * windowHeight /3 +  windowHeight / 5  + windowHeight / 10);
-    text("Your answer: " + (i + 1) + ": " + resultTable[i][2], windowWidth / 2, i * windowHeight /3 + windowHeight / 5  + 2 * windowHeight / 10);
+    content += "<p><strong>Question " + (i + 1) + ": " + resultTable[i][0] + "<\/strong><\/p>\r\n<p>Correct answer: " + resultTable[i][1] + 
+    "<\/p>\r\n<p>Your answer: " + resultTable[i][2] + "<\/p>\r\n<p>&nbsp;<\/p>";
   }
+  htmlResults = content;
+  let div = createDiv(htmlResults);
+  div.position(0, windowHeight / 5);
+  console.log(htmlResults);
+
 }
 
 function showQuiz(){
@@ -143,6 +149,7 @@ function changeImg(id){
     quizMode = false;
     showButtons(true);
     console.log(resultTable);
+    parseResult();
   }else{
     questionNo++;
     refresh();}
