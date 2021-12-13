@@ -1,8 +1,6 @@
 let questionNo = 0;
-let questionUrls = ["sicily.png", "kentucky.png"];
 let Q_COUNT;
 let imgs = [];
-let answers = [[]]
 let score = 0;
 let responses = [];
 let resultTable = [];
@@ -13,6 +11,8 @@ let htmlResults;
 
 let questionData;
 let buttons = [];
+
+var database;
 
 function preload(){
   questionData = loadJSON("src/questions.json", getImages);
@@ -30,11 +30,24 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   makeButtons();
   
+  const firebaseConfig = {
+    apiKey: "AIzaSyBxX3SNpcAL4K7ozvNJaDLb9rf56N2dFxw",
+    authDomain: "contextquiz.firebaseapp.com",
+    projectId: "contextquiz",
+    storageBucket: "contextquiz.appspot.com",
+    messagingSenderId: "663231691504",
+    appId: "1:663231691504:web:9cdeee86d9f3d8ea32e035",
+    databaseURL: "https://contextquiz-default-rtdb.firebaseio.com/"
+  };
+  firebase.initializeApp(firebaseConfig);
+  console.log(firebase);
+
+  database = firebase.database();
 
 }
 
 function draw() {
-  background("#222");
+  background("#fff");
   if(quizMode){
     showQuiz();
   }else{
@@ -49,7 +62,7 @@ function showResults(){
 
   textSize(28);  
   textAlign(CENTER);  
-  fill("#FFF")
+  fill("#89867e")
   text("Your Results", windowWidth / 2, windowHeight/10);
 }
 
@@ -67,13 +80,42 @@ function parseResult(){
 
 }
 
+
+function pushResults(){
+  let dbScore = 0;
+  let dbData = {};
+  let q = {};
+  for(let i = 0; i < resultTable.length; i++){
+    q['correct'] = resultTable[i][0];
+
+    q['correct_answer'] = resultTable[i][1];
+    q['chosen_answer'] = resultTable[i][2];
+
+    q['correct_id'] = questionData.photos[i].CORRECT;
+    q['chosen_id'] = responses[i];
+
+    if(q['correct_id'] == responses[i]){
+      dbScore++;
+    }
+
+    dbData['Question ' + i] = q;
+    q = {};
+  }
+
+
+  dbData['score'] = dbScore;
+  database.ref('results').push(dbData);
+}
+
 function showQuiz(){
+
   imageMode(CENTER);
   
   showScore();
 
   showQuestionNumber();
 
+  line(windowWidth*.25, windowHeight/10 * 4.25 + windowHeight/6, .75 * windowWidth, windowHeight/10 * 4.25 + windowHeight/6)
 
   showButtons();
 
@@ -84,23 +126,23 @@ function showQuiz(){
 function showScore(){
   textAlign(CENTER);
   textSize(23);  
-  fill("#FFF");
+  fill("#89867e");
   text("Score: " + score, 50, 50);
 }
 
 function showQuestionNumber(){
   textSize(28);  
   textAlign(CENTER);  
-  fill("#FFF")
+  fill("#89867e")
   text("Question " + (questionNo + 1), windowWidth / 2, windowHeight/10);
 
   textSize(22);
-  text("Pick the most appropriate caption", windowWidth / 2, windowHeight / 2 + windowHeight/20);
+  text("Pick the most appropriate caption", windowWidth / 2, windowHeight / 2 + 1.5* windowHeight/10);
 
 }
 function showPhoto(){
-  let height = windowHeight/10 * 3;
-  let start = windowHeight / 5;
+  let height = windowHeight/10 * 4;
+  let start = windowHeight / 6;
   image(imgs[questionNo], windowWidth/2, start + height / 2, height * (3/2), height);
 }
 
@@ -128,8 +170,8 @@ function makeButtons(){
   for(let i = 0; i < questionData.labelCount; i++){
     name = questionData.photos[questionNo].LABELS[i];
     buttons[i] = createButton(name, "label" + i)
-      .position(windowWidth/2, windowHeight / 20 * (14 + i))
-      .mouseClicked(function(){ changeImg(i); }).center('horizontal');
+      .position(windowWidth/2, windowHeight / 10 * (7 + i))
+      .mouseClicked(function(){ changeImg(i); }).size(windowWidth / 1.5 , windowHeight/15).center('horizontal');
   }
 }
 
@@ -150,6 +192,7 @@ function changeImg(id){
     showButtons(true);
     console.log(resultTable);
     parseResult();
+    pushResults();
   }else{
     questionNo++;
     refresh();}
@@ -162,6 +205,6 @@ function changeImg(id){
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
   for(let i = 0; i < buttons.length; i++){
-    buttons[i].position(windowWidth/2, windowHeight / 20 * (14 + i)).center('horizontal');
+    buttons[i].position(windowWidth/2, windowHeight / 10 * (7 + i)).center('horizontal');
   }
 }
