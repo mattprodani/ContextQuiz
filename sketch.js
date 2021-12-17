@@ -50,8 +50,11 @@ function draw() {
   background("#fff");
   if(quizMode){
     showQuiz();
+    
   }else{
     showResults();
+
+  showScore();
   }
 
 
@@ -111,7 +114,6 @@ function showQuiz(){
 
   imageMode(CENTER);
   
-  showScore();
 
   showQuestionNumber();
 
@@ -127,7 +129,7 @@ function showScore(){
   textAlign(CENTER);
   textSize(23);  
   fill("#89867e");
-  text("Score: " + score, 50, 50);
+  text("Quiz score: " + score + " out of " + questionData.photos.length, windowWidth/2, 50);
 }
 
 function showQuestionNumber(){
