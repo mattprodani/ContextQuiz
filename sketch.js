@@ -68,7 +68,7 @@ function showResults(){
 
 
 function parseResult(){
-  let content = "";
+  let content = "<a href=\"\/references.html\">View references here</a>";
   for(let i = 0; i < resultTable.length; i++){
     content += "<p><strong>Question " + (i + 1) + ": " + resultTable[i][0] + "<\/strong><\/p>\r\n<p>Correct answer: " + resultTable[i][1] + 
     "<\/p>\r\n<p>Your answer: " + resultTable[i][2] + "<\/p>\r\n<p>&nbsp;<\/p>";

@@ -1,37 +1,113 @@
-{   
-    "labelCount" : 3,
-    "photos": [
-      {
-          
-        "FILENAME": "sicily.png",
-        "LABELS": [
-          "Terrorist attack in Italy leaves 3 people dead",
-          "At least three people have been killed in an explosion in the Italian town of Ravanusa",
-          "Conflict in the Middle East leads to drone attack, hurting tens of people"
-        ],
-        "CORRECT": 1
-      },
-
-
-      {
-        "FILENAME": "kentucky.png",
-        "LABELS": [
-          "Men looking through rubble after a planned attack in Mayfield, Kentucky",
-          "Men sort through a destroyed business in Mayfield, Kentucky",
-          "Overlooked gas leak leads to destroyed business in Mayfield, Kentucky"
-        ],
-        "CORRECT": 1
-      },
-
-
-      {
-        "FILENAME": "sudan.png",
-        "LABELS": [
-          "Demonstrators protest against the prospect of military rule in Khartoum, Sudan",
-          "Election results lead to celebration in Khartoum, Sudan",
-          "Thousands parade in Khartoum, Sudan after the election of the first female vice-president"
-        ],
-        "CORRECT": 0
-      }
-    ]
-  }
+{
+  "labelCount": 3,
+  "photos": [
+    {
+      "FILENAME": "sicily.png",
+      "LABELS": [
+        "Terrorist attack in Italy leaves 3 people dead",
+        "At least three people have been killed in an explosion in the Italian town of Ravanusa",
+        "Conflict in the Middle East leads to drone attack, hurting tens of people"
+      ],
+      "CORRECT": 1
+    },
+    {
+      "FILENAME": "kentucky.png",
+      "LABELS": [
+        "Men looking through rubble after a planned attack in Mayfield, Kentucky",
+        "Men sort through a destroyed business in Mayfield, Kentucky",
+        "Overlooked gas leak leads to destroyed business in Mayfield, Kentucky"
+      ],
+      "CORRECT": 1
+    },
+    {
+      "FILENAME": "sudan.png",
+      "LABELS": [
+        "Demonstrators protest against the prospect of military rule in Khartoum, Sudan",
+        "Election results lead to thousands celebrating in Khartoum, Sudan",
+        "Thousands parade in Khartoum, Sudan after the election of the first female vice-president"
+      ],
+      "CORRECT": 0
+    },
+    {
+      "FILENAME": "syria.png",
+      "LABELS": [
+        "US-backed SDF forces carry out deadly operation in eastern Syria",
+        "If we’re going to combat climate change, we need to tackle air pollution too",
+        "Italian power plant in shambles after 6.6 magnitude earthquake"
+      ],
+      "CORRECT": 0
+    },
+    {
+      "FILENAME": "california.png",
+      "LABELS": [
+        "Firefighters lead efforts to subdue australia's wildfires",
+        "Prescribed fires still more damaging than helpful",
+        "California Utility Faces $550M in Penalties for 5 Wildfires"
+      ],
+      "CORRECT": 2
+    },
+    {
+      "FILENAME": "inflation.png",
+      "LABELS": [
+        "Masked individuals sworm outside to experience lunar eclipse",
+        "Inflation bites us all again after the economy roars back",
+        "The omicron variant's impact on your holiday season"
+      ],
+      "CORRECT": 1
+    },
+    {
+      "FILENAME": "china.png",
+      "LABELS": [
+        "China's quarterly carbon emissions fall for the first time since COVID-19 pandemic",
+        "Tourism rates sky-high despite rising COVID cases",
+        "Chinese workers are saying enough is enough and Xi is not amused"
+      ],
+      "CORRECT": 2
+    },
+    {
+      "FILENAME": "zuck.png",
+      "LABELS": [
+        "Mark Zuckerberg sells stock everyday as billionaires cash out",
+        "Trump's Facebook Suspension a Sign of the end of the first amendment as we know it",
+        "From the Harvard dorms to the metaverse: the story behind Mark Zuckerberg's success"
+      ],
+      "CORRECT": 0
+    },
+    {
+      "FILENAME": "biden.png",
+      "LABELS": [
+        "Biden's year getting worse: the Build Back Better Agenda dropped by Senate",
+        "President Biden and Xi Jinping: Strengthening the West's Allies in Asia",
+        "Biden says unvaccinated face winter of severe illness, death"
+      ],
+      "CORRECT": 2
+    },
+    {
+      "FILENAME": "kentucky2.png",
+      "LABELS": [
+        "Injured workers sue their employer for barring them from leaving factory during tornado",
+        "A look at Kentucky's worst tornadoes",
+        "Tornado leaves man without home, or family"
+      ],
+      "CORRECT": 1
+    },
+    {
+      "FILENAME": "fox.png",
+      "LABELS": [
+        "Fox attacks at an all time high at a centuries old conservation site",
+        "Domesticated foxes and all other new pet trends you need to know",
+        "As Ethiopia’s war rages, a 400-year-old conservation site is scarred by battle"
+      ],
+      "CORRECT": 2
+    },
+    {
+      "FILENAME": "tiger.png",
+      "LABELS": [
+        "Cleveland Metroparks Zoo set to temporarily close due to Omicron variant increasing COVID-19 cases",
+        "Under fire for animal mistreatment - Cleveland Metroparks Zoo facing heat from PETA",
+        "Cleveland Metroparks Zoo says 5 tigers have COVID-19"
+      ],
+      "CORRECT": 2
+    }
+  ]
+}
